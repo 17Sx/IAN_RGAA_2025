@@ -98,7 +98,7 @@ button:focus {
 
 .b-nav ul li {
   border-radius: 15px;
-  border: 1px solid #0f8321;
+  border: 1px solid #0F8321;
   padding: 10px;
 }
 
@@ -116,7 +116,7 @@ button:focus {
 }
 
 .b-nav ul li:hover {
-  background-color: #0f8321;
+  background-color: #0F8321;
 }
 
 .dropdown-content {
@@ -144,7 +144,7 @@ footer {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #0f8321;
+  background-color: #0F8321;
 }
 
 .top-footer {
@@ -214,6 +214,10 @@ footer {
   padding: 0.5rme;
 }
 
+.acc-icons a{
+  color: white;
+}
+
 .logo {
   width: 50%;
   display: flex;
@@ -228,4 +232,9 @@ footer {
 .aaa {
   filter: none !important;
   border: none !important;
+}
+
+.backup{
+  text-decoration: none;
+  color: white;
 }
