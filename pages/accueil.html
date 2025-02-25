@@ -152,16 +152,230 @@
 
     <!-- Main -->
     <main id="main-content">
-      <h1>Accueil du Musée du Quai Branly - Jacques Chirac</h1>
+      <h1 class="main-title">Accueil du Musée du Quai Branly - Jacques Chirac</h1>
 
       <!-- Caroussel & Map -->
-      <section class="caroussel">
-        <h2>Carrousel</h2>
-      </section>
+      <section class="caroussel">        
+        <div class="carousel-container" aria-roledescription="carrousel" aria-label="Expositions à venir">
+            <!-- Contrôles du carrousel -->
+            <div class="carousel-controls">
+                <button id="carousel-prev" aria-label="Image précédente" class="carousel-nav-button">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button id="carousel-next" aria-label="Image suivante" class="carousel-nav-button">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <button id="carousel-pause" aria-label="Mettre en pause le défilement" class="carousel-pause-button">
+                    <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                    <i class="fa-solid fa-play" aria-hidden="true" style="display: none;"></i>
+                </button>
+            </div>
+    
+            <!-- Slides du carrousel -->
+            <div class="carousel-slides" aria-live="polite">
+                <div id="slide-1" class="carousel-slide" aria-labelledby="slide-title-1">
+                    <img src="../public/img/slider/carrousel1.bmp" alt="Exposition arts d'Afrique - Masque rituel Dogon">
+                    <div class="slide-info">
+                        <p class="slide-date">12 Mai - 25 Août 2023</p>
+                        <h3 id="slide-title-1" class="slide-title">Arts d'Afrique</h3>
+                        <a href="#" class="slide-button">Je suis intéressé</a>
+                    </div>
+                    <div class="timer-bar"><div class="timer-progress"></div></div>
+                </div>
+                
+                <div id="slide-2" class="carousel-slide" aria-labelledby="slide-title-2">
+                    <img src="../public/img/slider/carrousel2.bmp" alt="Exposition Océanie contemporaine - Installation artistique de John Pule">
+                    <div class="slide-info">
+                        <p class="slide-date">5 Juin - 15 Octobre 2023</p>
+                        <h3 id="slide-title-2" class="slide-title">Océanie contemporaine</h3>
+                        <a href="#" class="slide-button">Je suis intéressé</a>
+                    </div>
+                    <div class="timer-bar"><div class="timer-progress"></div></div>
+                </div>
+                
+                <div id="slide-3" class="carousel-slide" aria-labelledby="slide-title-3">
+                    <img src="../public/img/slider/carrousel3.bmp" alt="Exposition Textiles d'Asie - Broderies traditionnelles du Rajasthan">
+                    <div class="slide-info">
+                        <p class="slide-date">20 Juillet - 30 Novembre 2023</p>
+                        <h3 id="slide-title-3" class="slide-title">Textiles d'Asie</h3>
+                        <a href="#" class="slide-button">Je suis intéressé</a>
+                    </div>
+                    <div class="timer-bar"><div class="timer-progress"></div></div>
+                </div>
+                
+                <div id="slide-4" class="carousel-slide" aria-labelledby="slide-title-4">
+                    <img src="../public/img/slider/carrousel4.bmp" alt="Exposition Trésors précolombiens - Figurine en or Quimbaya">
+                    <div class="slide-info">
+                        <p class="slide-date">10 Septembre - 15 Janvier 2024</p>
+                        <h3 id="slide-title-4" class="slide-title">Trésors précolombiens</h3>
+                        <a href="#" class="slide-button">Je suis intéressé</a>
+                    </div>
+                    <div class="timer-bar"><div class="timer-progress"></div></div>
+                </div>
+                
+                <div id="slide-5" class="carousel-slide" aria-labelledby="slide-title-5">
+                    <img src="../public/img/slider/carrousel5.bmp" alt="Exposition Photographie ethnographique - Portraits du monde par Sebastião Salgado">
+                    <div class="slide-info">
+                        <p class="slide-date">5 Octobre - 28 Février 2024</p>
+                        <h3 id="slide-title-5" class="slide-title">Photographie ethnographique</h3>
+                        <a href="#" class="slide-button">Je suis intéressé</a>
+                    </div>
+                    <div class="timer-bar"><div class="timer-progress"></div></div>
+                </div>
+            </div>
+            
+            <!-- Navigation par points -->
+            <div class="carousel-indicators" role="tablist" aria-label="Indicateurs du carrousel">
+                <button id="indicator-1" aria-label="Afficher l'exposition Arts d'Afrique" aria-selected="true" aria-controls="slide-1" role="tab" class="carousel-indicator active"></button>
+                <button id="indicator-2" aria-label="Afficher l'exposition Océanie contemporaine" aria-selected="false" aria-controls="slide-2" role="tab" class="carousel-indicator"></button>
+                <button id="indicator-3" aria-label="Afficher l'exposition Textiles d'Asie" aria-selected="false" aria-controls="slide-3" role="tab" class="carousel-indicator"></button>
+                <button id="indicator-4" aria-label="Afficher l'exposition Trésors précolombiens" aria-selected="false" aria-controls="slide-4" role="tab" class="carousel-indicator"></button>
+                <button id="indicator-5" aria-label="Afficher l'exposition Photographie ethnographique" aria-selected="false" aria-controls="slide-5" role="tab" class="carousel-indicator"></button>
+            </div>
+        </div>
+        
+        <!-- Descriptions des projets sous le carrousel -->
+        <div class="carousel-descriptions">
+            <div class="description active" aria-hidden="false">
+                <h3>Arts d'Afrique</h3>
+                <p>Découvrez une collection exceptionnelle de masques et sculptures rituelles provenant des différentes régions d'Afrique. Cette exposition met en lumière la richesse artistique et la diversité culturelle du continent africain à travers des pièces rares et emblématiques.</p>
+            </div>
+            
+            <div class="description" aria-hidden="true">
+                <h3>Océanie contemporaine</h3>
+                <p>Cette exposition présente le travail d'artistes contemporains originaires d'Océanie qui réinterprètent leur patrimoine culturel tout en abordant des problématiques actuelles comme l'identité, la colonisation et le changement climatique.</p>
+            </div>
+            
+            <div class="description" aria-hidden="true">
+                <h3>Textiles d'Asie</h3>
+                <p>Un voyage à travers les traditions textiles d'Asie, des soieries chinoises aux broderies d'Inde en passant par les batiks indonésiens. L'exposition illustre le rôle essentiel des textiles dans l'expression culturelle et sociale des peuples d'Asie.</p>
+            </div>
+            
+            <div class="description" aria-hidden="true">
+                <h3>Trésors précolombiens</h3>
+                <p>Plongez dans les civilisations précolombiennes à travers une collection d'objets d'art, d'orfèvrerie et de céramique. Cette exposition révèle le raffinement artistique et la complexité des sociétés qui ont prospéré en Amérique avant l'arrivée des Européens.</p>
+            </div>
+            
+            <div class="description" aria-hidden="true">
+                <h3>Photographie ethnographique</h3>
+                <p>Une rétrospective des grands photographes qui ont documenté les cultures du monde, incluant des œuvres contemporaines qui questionnent la représentation de l'autre et le regard occidental. Une réflexion visuelle sur l'évolution de l'ethnographie.</p>
+            </div>
+        </div>
+    </section>
+    
 
-      <section class="map">
-        <h2>Carte</h2>
-      </section>
+    <section class="map" id="acces">        
+        <div class="map-container">
+            <!-- Colonne carte -->
+            <div class="map-iframe-container">
+                <div class="iframe-title-container">
+                    <h3 id="map-title">Localisation du musée</h3>
+                    <div class="map-controls">
+                    </div>
+                </div>
+    
+                <div class="map-wrapper">
+                    <!-- Élément qui précède l'iframe pour indiquer le contenu aux utilisateurs -->
+                    <div class="map-info-text" id="map-description">
+                        Carte interactive montrant l'emplacement du Musée du Quai Branly - Jacques Chirac au 37 Quai Branly, 75007 Paris, France.
+                    </div>
+                    
+                    <!-- iframe Google Maps avec attributs d'accessibilité -->
+                    <iframe 
+                        title="Carte Google Maps du Musée du Quai Branly" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9169284853846!2d2.295443076742267!3d48.8606281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fdf888b2e99%3A0xf4b2f47a1d8c0079!2sMus%C3%A9e%20du%20quai%20Branly%20-%20Jacques%20Chirac!5e0!3m2!1sfr!2sfr!4v1704887462899!5m2!1sfr!2sfr" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        aria-describedby="map-description">
+                    </iframe>
+                </div>
+    
+                <!-- Adresse du musée -->
+                <div class="museum-address" aria-labelledby="address-title">
+                    <h4 id="address-title"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Adresse</h4>
+                    <address>
+                        Musée du Quai Branly - Jacques Chirac<br>
+                        37 Quai Branly<br>
+                        75007 Paris, France
+                    </address>
+                </div>
+            </div>
+    
+            <!-- Colonne accès - Version simplifiée avec icônes -->
+            <div class="access-info">
+                <h3 id="access-title">Comment se rendre au musée</h3>
+    
+                <div class="transport-icons">
+                    <div class="transport-icon-item">
+                        <div class="icon-wrapper" aria-labelledby="metro-label">
+                            <i class="fa-solid fa-train-subway" aria-hidden="true"></i>
+                        </div>
+                        <p id="metro-label">Métro</p>
+                    </div>
+    
+                    <div class="transport-icon-item">
+                        <div class="icon-wrapper" aria-labelledby="rer-label">
+                            <i class="fa-solid fa-train" aria-hidden="true"></i>
+                        </div>
+                        <p id="rer-label">RER</p>
+                    </div>
+    
+                    <div class="transport-icon-item">
+                        <div class="icon-wrapper" aria-labelledby="bus-label">
+                            <i class="fa-solid fa-bus" aria-hidden="true"></i>
+                        </div>
+                        <p id="bus-label">Bus</p>
+                    </div>
+    
+                    <div class="transport-icon-item">
+                        <div class="icon-wrapper" aria-labelledby="bike-label">
+                            <i class="fa-solid fa-bicycle" aria-hidden="true"></i>
+                        </div>
+                        <p id="bike-label">Vélib</p>
+                    </div>
+    
+                    <div class="transport-icon-item">
+                        <div class="icon-wrapper" aria-labelledby="walk-label">
+                            <i class="fa-solid fa-person-walking" aria-hidden="true"></i>
+                        </div>
+                        <p id="walk-label">À pied</p>
+                    </div>
+    
+                    <div class="transport-icon-item">
+                        <div class="icon-wrapper" aria-labelledby="car-label">
+                            <i class="fa-solid fa-car" aria-hidden="true"></i>
+                        </div>
+                        <p id="car-label">Voiture</p>
+                    </div>
+    
+                    <div class="transport-icon-item">
+                        <div class="icon-wrapper" aria-labelledby="boat-label">
+                            <i class="fa-solid fa-ship" aria-hidden="true"></i>
+                        </div>
+                        <p id="boat-label">Batobus</p>
+                    </div>
+    
+                    <div class="transport-icon-item">
+                        <div class="icon-wrapper accessibility-icon" aria-labelledby="access-label">
+                            <i class="fa-solid fa-wheelchair" aria-hidden="true"></i>
+                        </div>
+                        <p id="access-label">Accès PMR</p>
+                    </div>
+                </div>
+    
+                <div class="access-more-info">
+                    <a href="#" class="btn-access" aria-label="Télécharger le plan d'accès détaillé">
+                        Infos Pratiques
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
       <!-- Fin Caroussel & Map -->
 
       <!-- Horraire -->
