@@ -147,42 +147,43 @@
 
     <div class="container">
       <h1>Formulaire de contact</h1>
+      <p class="chpsob"><span>*</span> champs obligatoires</p>
       <form action="">
         <div class="inputdiv namediv">
-          <label for="nameinput">Nom:</label>
+          <label for="nameinput"><span>*</span> Nom:</label>
           <input
             type="text"
             name="name"
             class="input"
             id="nameinput"
-            placeholder="Votre Nom"
+            placeholder="DUPONT"
             required
           />
         </div>
         <div class="inputdiv firstnamediv">
-          <label for="firstnameinput">Prénom:</label>
+          <label for="firstnameinput"><span>*</span> Prénom:</label>
           <input
             type="text"
             name="firstname"
             class="input"
             id="firstnameinput"
-            placeholder="Votre Prénom"
+            placeholder="Jean"
             required
           />
         </div>
         <div class="inputdiv emaildiv">
-          <label for="emailinput">Email:</label>
+          <label for="emailinput"><span>*</span> Email:</label>
           <input
             type="email"
             name="email"
             class="input"
             id="emailinput"
-            placeholder="Votre Email"
+            placeholder="jeandupont@gmail.com"
             required
           />
         </div>
         <div class="inputdiv themediv">
-          <label for="themeinput">Thématique du message:</label>
+          <label for="themeinput"><span>*</span> Thématique du message:</label>
           <select
             name="thematiques"
             class="thematiques"
@@ -199,18 +200,18 @@
           </select>
         </div>
         <div class="inputdiv titlediv">
-          <label for="titleinput">Titre:</label>
+          <label for="titleinput"><span>*</span> Titre:</label>
           <input
             type="text"
             name="title"
             class="input"
             id="titleinput"
-            placeholder="Titre du message"
+            placeholder="Horaire de visite"
             required
           />
         </div>
         <div class="contentdiv">
-          <label for="contentinput">Contenu:</label>
+          <label for="contentinput"><span>*</span> Contenu:</label>
           <textarea
             type="text"
             name="content"
@@ -218,7 +219,7 @@
             cols="5"
             class=""
             id="contentinput"
-            placeholder="Contenu du message"
+            placeholder="Bonjour, je cherche..."
             required
           ></textarea>
         </div>
