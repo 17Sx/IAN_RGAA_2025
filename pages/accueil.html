@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>musée du quai Branly - Jacques Chirac - Accueil</title>
+    <title>Musée du quai Branly - Jacques Chirac - Accueil</title>
     <link rel="stylesheet" href="../css/accueil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
 <!-- Skip Link -->
+<div class="skip-links">
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-<!-- Fin Skip Link -->
+    <a href="#nav-main" class="skip-link">Aller au menu principal</a>
+    <a href="#footer" class="skip-link">Aller au pied de page</a>
+</div>
 
-
-<!-- Header -->    
-<header role="banner">
+<!-- Header -->
+<header id="header" role="banner">
     <a href="/" aria-label="Accueil">
         <img src="../public/img/logo.png" alt="Logo du musée du quai Branly">
     </a>
@@ -23,7 +25,7 @@
         <ul>
             <li class="dropdown">
                 <a href="accueil.html" aria-expanded="false" aria-haspopup="true">
-                    INFORMATIONS PRATIQUES 
+                    INFORMATIONS PRATIQUES
                     <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </a>
                 <div class="dropdown-content" role="menu">
@@ -34,7 +36,7 @@
             </li>
             <li class="dropdown">
                 <a href="collections.html" aria-expanded="false" aria-haspopup="true">
-                    COLLECTIONS 
+                    COLLECTIONS
                     <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </a>
                 <div class="dropdown-content" role="menu">
@@ -45,7 +47,7 @@
             </li>
             <li class="dropdown">
                 <a href="expositions.html" aria-expanded="false" aria-haspopup="true">
-                    EXPOSITIONS & EVENEMENTS 
+                    EXPOSITIONS & EVENEMENTS
                     <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </a>
                 <div class="dropdown-content" role="menu">
@@ -56,7 +58,7 @@
             </li>
             <li class="dropdown">
                 <a href="infos.html" aria-expanded="false" aria-haspopup="true">
-                    RECHERCHE SCIENTIFIQUE 
+                    RECHERCHE SCIENTIFIQUE
                     <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </a>
                 <div class="dropdown-content" role="menu">
@@ -67,7 +69,7 @@
             </li>
             <li class="dropdown">
                 <a href="aaa.html" aria-expanded="false" aria-haspopup="true">
-                    SOUTENIR 
+                    SOUTENIR
                     <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                 </a>
                 <div class="dropdown-content" role="menu">
@@ -113,61 +115,63 @@
             </a>
         </li>
         <li>
-            <a href="contact.html">CONTACT
-            <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+            <a href="contact.html">
+                CONTACT
+                <i class="fa-solid fa-address-card" aria-hidden="true"></i>
             </a>
         </li>
+        <li>
             <a href="">
                 <img src="../public/img/drapeaufrancais.png" alt="Image du drapeau français">
             </a>
-        </ul>
+        </li>
+    </ul>
 </nav>
-<!-- Fin Header -->   
-
+<!-- Fin Header -->
 
 <!-- Main -->
-<main>
+<main id="main-content">
+    <h1>Accueil du Musée du Quai Branly - Jacques Chirac</h1>
 
-<!-- Caroussel & Map -->
-<section class="caroussel">
+    <!-- Caroussel & Map -->
+    <section class="caroussel">
+        <h2>Carrousel</h2>
+    </section>
 
-</section>
+    <section class="map">
+        <h2>Carte</h2>
+    </section>
+    <!-- Fin Caroussel & Map -->
 
-<section class="map">
+    <!-- Horraire -->
+    <section class="horraire">
+        <h2>Horaires</h2>
+    </section>
+    <!-- Fin Horraire -->
 
-</section>
-<!-- Fin Caroussel & Map -->
+    <!-- Collections -->
+    <section class="collections">
+        <h2>Collections</h2>
+    </section>
+    <!-- Fin Collections -->
 
-<!-- Horraire -->
-<section class="horraire">
-
-</section>
-<!-- Fin Horraire -->
-
-
-<!-- Collections -->
-<section class="collections">
-
-</section>
-<!-- Fin Collections -->
-
-<!-- Documentation générale -->
-<section class="doc">
-
-</section>
-<!-- Fin Documentation générale -->
+    <!-- Documentation générale -->
+    <section class="doc">
+        <h2>Documentation générale</h2>
+    </section>
+    <!-- Fin Documentation générale -->
 
 </main>
 <!-- Fin Main -->
 
 <!-- Footer -->
-<footer>
+<footer id="footer">
     <div class="top-footer">
 
         <div class="presse">
             <div>
-                <h3>ESPACE PRESSSE</h3>
-                <p>Dossiers, communiqués, bandes annonces</p>
+                <h3>ESPACE PRESSE</h3>
+                <p><a href="#">Dossiers, communiqués, bandes annonces</a></p>
                 <p><a href="#">Contact Presse</a></p>
             </div>
 
@@ -180,15 +184,15 @@
         <div class="contact">
             <h3>RESTER EN CONTACT</h3>
             <p><a href="#">Abonnement Newsletter</a></p>
-            <p><a href="contact.html"></a>Contact</p>
+            <p><a href="contact.html">Contact</a></p>
 
             <div class="social">
                 <p>Réseaux sociaux:</p>
                 <div class="social-link">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <i class="fa-brands fa-youtube"></i>
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
+                    <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span></a>
+                    <a href="#" title="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i><span class="sr-only">YouTube</span></a>
                 </div>
                 <p>Découvrir tous les réseaux sociaux</p>
             </div>
@@ -209,12 +213,12 @@
 
     <div class="bottom-footer">
         <div class="acc-icons">
-            <img src="../public/img/logohandicap.png" alt="Logo handicap">
-            <img src="../public/img/cecite.png" alt="Logo handicap visuel">
-            <img src="../public/img/sourd.png" alt="Logo handicap auditif">
-            <img src="../public/img/psycho.png" alt="Logo handicap psycholigique et mental">
-            <img class="aaa" src="../public/img/lsf.png" alt="Logo langue des signes">
-            <img class="aaa" src="../public/img/facil-iti.png" alt="Logo faciliti">
+            <a href="#"><img src="../public/img/logohandicap.png" alt="Logo handicap"></a>
+            <a href="#"><img src="../public/img/cecite.png" alt="Logo handicap visuel"></a>
+            <a href="#"><img src="../public/img/sourd.png" alt="Logo handicap auditif"></a>
+            <a href="#"><img src="../public/img/psycho.png" alt="Logo handicap psychologique et mental"></a>
+            <a href="#"><img class="aaa" src="../public/img/lsf.png" alt="Logo langue des signes"></a>
+            <a href="#"><img class="aaa" src="../public/img/facil-iti.png" alt="Logo faciliti"></a>
         </div>
 
         <div class="logo">
@@ -222,11 +226,11 @@
             <p>Le musée du Quai Branly - Jacques Chirac est un établissement public national à caractère administratif, placé sous la tutelle conjointe du ministère de la Culture et du ministère de l’Enseignement supérieur, de la Recherche et de l’Innovation. </p>
         </div>
     </div>
+
+    <a href="#header">Retourner en haut de la page</a>
 </footer>
 <!-- Fin Footer -->
 
-
-
-<script src="../js/script.js" ></script>
+<script src="../js/script.js"></script>
 </body>
 </html>
