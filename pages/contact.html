@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>musée du quai Branly - Jacques Chirac - Accueil</title>
+    <link rel="stylesheet" href="../css/accueil.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <!-- Fin Skip Link -->
+
+    <!-- Header -->
+    <header role="banner">
+      <a href="/" aria-label="Accueil">
+        <img src="../public/img/logo.png" alt="Logo du musée du quai Branly" />
+      </a>
+      <nav role="navigation" aria-label="Menu principal">
+        <ul>
+          <li class="dropdown">
+            <a href="accueil.html" aria-expanded="false" aria-haspopup="true">
+              INFORMATIONS PRATIQUES
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-content" role="menu">
+              <a href="#" role="menuitem">Horaires</a>
+              <a href="#" role="menuitem">Tarifs</a>
+              <a href="#" role="menuitem">Accès</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a
+              href="collections.html"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              COLLECTIONS
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-content" role="menu">
+              <a href="#" role="menuitem">Permanentes</a>
+              <a href="#" role="menuitem">Temporaires</a>
+              <a href="#" role="menuitem">Archives</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a
+              href="expositions.html"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              EXPOSITIONS & EVENEMENTS
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-content" role="menu">
+              <a href="#" role="menuitem">En cours</a>
+              <a href="#" role="menuitem">À venir</a>
+              <a href="#" role="menuitem">Passées</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="infos.html" aria-expanded="false" aria-haspopup="true">
+              RECHERCHE SCIENTIFIQUE
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-content" role="menu">
+              <a href="#" role="menuitem">Publications</a>
+              <a href="#" role="menuitem">Projets</a>
+              <a href="#" role="menuitem">Équipe</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="aaa.html" aria-expanded="false" aria-haspopup="true">
+              SOUTENIR
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-content" role="menu">
+              <a href="#" role="menuitem">Faire un don</a>
+              <a href="#" role="menuitem">Mécénat</a>
+              <a href="#" role="menuitem">Adhésion</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <nav class="b-nav" role="navigation" aria-label="Actions rapides">
+      <ul>
+        <li>
+          <a href="">
+            BILLETERIE
+            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            INFORMATIONS
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            AGENDA
+            <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            MEDIAS
+            <i class="fa-solid fa-image" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            PLAN INTERACTIF
+            <i class="fa-solid fa-map" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html"
+            >CONTACT
+            <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+          </a>
+        </li>
+        <a href="">
+          <img
+            src="../public/img/drapeaufrancais.png"
+            alt="Image du drapeau français"
+          />
+        </a>
+      </ul>
+    </nav>
+    <!-- Fin Header -->
+
+    <div class="container">
+      <h1>Formulaire de contact</h1>
+      <form action="">
+        <div class="inputdiv namediv">
+          <label for="nameinput">Nom:</label>
+          <input
+            type="text"
+            name="name"
+            class="input"
+            id="nameinput"
+            placeholder="Votre Nom"
+            required
+          />
+        </div>
+        <div class="inputdiv firstnamediv">
+          <label for="firstnameinput">Prénom:</label>
+          <input
+            type="text"
+            name="firstname"
+            class="input"
+            id="firstnameinput"
+            placeholder="Votre Prénom"
+            required
+          />
+        </div>
+        <div class="inputdiv emaildiv">
+          <label for="emailinput">Email:</label>
+          <input
+            type="email"
+            name="email"
+            class="input"
+            id="emailinput"
+            placeholder="Votre Email"
+            required
+          />
+        </div>
+        <div class="inputdiv themediv">
+          <label for="themeinput">Thématique du message:</label>
+          <select
+            name="thematiques"
+            class="thematiques"
+            id="themeinput"
+            required
+          >
+            <option value="">Veuillez choisir une thématique</option>
+            <option value="jardins">Jardins du musée</option>
+            <option value="reservation">Réservation</option>
+            <option value="contenu">Contenu du musée</option>
+            <option value="reclamation">Réclamation</option>
+            <option value="collections">Collections</option>
+            <option value="autres">Autres</option>
+          </select>
+        </div>
+        <div class="inputdiv titlediv">
+          <label for="titleinput">Titre:</label>
+          <input
+            type="text"
+            name="title"
+            class="input"
+            id="titleinput"
+            placeholder="Titre du message"
+            required
+          />
+        </div>
+        <div class="contentdiv">
+          <label for="contentinput">Contenu:</label>
+          <textarea
+            type="text"
+            name="content"
+            rows="30"
+            cols="5"
+            class=""
+            id="contentinput"
+            placeholder="Contenu du message"
+            required
+          ></textarea>
+        </div>
+        <div class="checkboxdiv">
+          <input type="checkbox" id="checkboxinput" />
+          <label for="checkboxinput">Je suis déjà venu au musée</label>
+        </div>
+
+        <div class="submitdiv">
+          <button type="submit" class="button" id="submitformbutton">
+            J'envoie mon message
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>
