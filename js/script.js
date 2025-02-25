@@ -30,3 +30,11 @@ document.addEventListener('click', (e) => {
         });
     }
 });
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        dropdowns.forEach(dropdown => {
+            dropdown.querySelector('.dropdown-content').style.display = 'none';
+        });
+    }
+});
