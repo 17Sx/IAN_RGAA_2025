@@ -9,7 +9,8 @@ body {
 button:focus,
 input:focus,
 textarea:focus,
-select:focus {
+select:focus,
+option:focus {
   outline: 2px solid #ff0000;
   outline-offset: 2px;
 }
@@ -46,6 +47,12 @@ label {
 .thematiques {
   height: 50px;
   padding: 2px 25px;
+}
+
+.thematiques option {
+  width: 100%;
+  font-family: "Parisine-Regular";
+  background: #fff;
 }
 
 .contentdiv {
