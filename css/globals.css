@@ -98,7 +98,7 @@ button:focus {
 
 .b-nav ul li {
   border-radius: 15px;
-  border: 1px solid #39b54b;
+  border: 1px solid #0f8321;
   padding: 10px;
 }
 
@@ -116,7 +116,7 @@ button:focus {
 }
 
 .b-nav ul li:hover {
-  background-color: #39b54b;
+  background-color: #0f8321;
 }
 
 .dropdown-content {
@@ -136,4 +136,96 @@ button:focus {
 .skip-link:focus {
   left: 50%;
   transform: translateX(-50%);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #0f8321;
+}
+
+.top-footer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 5rem;
+}
+.top-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.presse,
+.contact,
+.mentions {
+  margin-bottom: auto;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.presse h3,
+.presse p,
+.presse a,
+.contact h3,
+.contact p,
+.contact a,
+.mentions h3,
+.mentions p,
+.mentions a {
+  margin-bottom: 10px;
+}
+
+.social-link {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/*Bottom Footer*/
+
+.bottom-footer {
+  border-top: 1px solid white;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 5rem;
+}
+
+.acc-icons {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.acc-icons img {
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+  border-radius: 100%;
+  border: 3px solid rgb(0, 0, 0);
+  filter: invert();
+  padding: 0.5rme;
+}
+
+.logo {
+  width: 50%;
+  display: flex;
+}
+
+.logo p {
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  width: 50%;
+}
+
+.aaa {
+  filter: none !important;
+  border: none !important;
 }
