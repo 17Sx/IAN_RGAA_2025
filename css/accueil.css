@@ -598,3 +598,81 @@ main {
   left: 78%;
   top: 50%;
 }
+
+.doc h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.navigation-bar {
+  background-color: #fff;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 50px;
+  width: 1100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-bar button {
+  color: #333;
+  text-decoration: none;
+  background-color: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: none;
+  font-family: "Parisine-Regular";
+  font-size: 1rem;
+}
+
+.navigation-bar button.active {
+  color: #fff;
+  background-color: #0f8321;
+}
+
+.navigation-bar button i {
+  margin-left: 5px;
+}
+
+.composerdiv {
+  display: flex;
+  flex-direction: row;
+  margin: 30px auto;
+}
+
+.composer {
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 0 25px;
+  text-align: center;
+  width: auto;
+}
+
+.separation-bar {
+  border-top: 2px solid #333;
+  margin: 10px 0;
+}
+
+.composer-h4 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.composer button {
+  background-color: #0f8321;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.composer button:hover {
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+}
