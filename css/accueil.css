@@ -12,247 +12,79 @@ main {
   text-transform: uppercase;
 }
 
-/* Carrousel accessible conforme RGAA */
-.carousel-container {
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+/* Photo presentation*/
 
-.carousel-slides {
+.presentation {
   position: relative;
-  height: 600px;
+  width: 80%;
+  margin: 2rem 0;
 }
 
 .carousel-slide {
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  z-index: 0;
-}
-
-.carousel-slide.active {
-  opacity: 1;
-  z-index: 1;
 }
 
 .carousel-slide img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .slide-info {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
-  background-color: rgba(240, 240, 240, 0.9);
-  padding: 20px;
-  max-width: 350px;
-  border-radius: 3px;
-  color: #333;
-  z-index: 2;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 400px;
 }
 
 .slide-date {
+  color: #333;
   margin: 0;
-  font-size: 14px;
-  color: #666;
-  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .slide-title {
-  margin: 10px 0;
-  font-size: 20px;
-  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #0f8321;
+  font-size: 1.5rem;
 }
 
 .slide-button {
   display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #0f8321;
+  background: #0f8321;
   color: white;
+  padding: 0.8rem 1.5rem;
   text-decoration: none;
-  border-radius: 3px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.slide-button:hover,
-.slide-button:focus {
-  background-color: red;
-  text-decoration: underline;
-}
-
-/* Contrôles du carrousel */
-.carousel-controls {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-  z-index: 10;
-  display: flex;
-  gap: 10px;
-}
-
-.carousel-nav-button,
-.carousel-pause-button {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  color: #333;
-}
-
-.carousel-nav-button:hover,
-.carousel-pause-button:hover,
-.carousel-nav-button:focus,
-.carousel-pause-button:focus {
-  background-color: white;
-  outline: 2px solid red;
-}
-
-/* Indicateurs du carrousel */
-.carousel-indicators {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 10;
-}
-
-.carousel-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.6);
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.carousel-indicator:hover,
-.carousel-indicator:focus {
-  background-color: rgba(255, 255, 255, 0.9);
-  outline: 2px solid red;
-}
-
-.carousel-indicator.active {
-  background-color: #0f8321;
-  transform: scale(1.2);
-}
-
-/* Barre de progression */
-.timer-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 5;
-}
-
-.timer-progress {
-  height: 100%;
-  width: 0%;
-  background-color: #0f8321;
-  transition: width 0.1s linear;
-}
-
-/* Descriptions des projets */
-.carousel-descriptions {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #f5f5f5;
   border-radius: 4px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.slide-button:hover {
+  background: red;
 }
 
 .description {
-  display: none;
-  animation: fadeIn 0.5s ease-in-out;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
 }
 
-.description.active {
-  display: block;
-}
-
-.description h3 {
+.description h3{  
+  font-size: 1.5rem;
   color: #0f8321;
-  margin-top: 0;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .description p {
-  line-height: 1.6;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Responsive du carrousel */
-@media (max-width: 768px) {
-  .carousel-slides {
-    height: 450px;
-  }
-
-  .slide-info {
-    left: 20px;
-    bottom: 70px;
-    max-width: 80%;
-  }
-
-  .carousel-controls {
-    right: 20px;
-    bottom: 70px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-slides {
-    height: 350px;
-  }
-
-  .slide-info {
-    padding: 15px;
-    left: 10px;
-    bottom: 60px;
-  }
-
-  .slide-title {
-    font-size: 18px;
-  }
-
-  .carousel-controls {
-    right: 10px;
-    bottom: 60px;
-  }
-
-  .carousel-nav-button,
-  .carousel-pause-button {
-    width: 36px;
-    height: 36px;
-  }
+  font-size: 1rem;
+  width: 70%;
 }
 
 /* Plan et accès - Section map */

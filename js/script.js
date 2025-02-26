@@ -42,29 +42,31 @@ document.addEventListener('keydown', (e) => {
 
 //caroussel
 
-
 document.addEventListener('DOMContentLoaded', function() {
     // Initialisation du carrousel
     const carousel = {
         container: document.querySelector('.carousel-container'),
         slides: document.querySelectorAll('.carousel-slide'),
-        indicators: document.querySelectorAll('.carousel-indicator'),
         descriptions: document.querySelectorAll('.description'),
         prevButton: document.getElementById('carousel-prev'),
         nextButton: document.getElementById('carousel-next'),
         pauseButton: document.getElementById('carousel-pause'),
+        counter: document.getElementById('carousel-counter'),
         timerBars: document.querySelectorAll('.timer-progress'),
         currentIndex: 0,
         interval: null,
         isPaused: false,
         slideInterval: 6000, // 6 secondes par slide
+        totalSlides: 0,
         
         // Initialiser le carrousel
         init: function() {
+            this.totalSlides = this.slides.length;
             this.showSlide(0);
             this.startAutoPlay();
             this.attachEventListeners();
             this.makeAccessible();
+            this.updateCounter(0);
         },
         
         // Afficher un slide spécifique
@@ -74,11 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (index >= this.slides.length) index = 0;
             
             // Supprimer la classe 'active' de tous les éléments
-            this.slides.forEach(slide => slide.classList.remove('active'));
-            this.indicators.forEach(ind => {
-                ind.classList.remove('active');
-                ind.setAttribute('aria-selected', 'false');
+            this.slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.setAttribute('aria-hidden', 'true');
+                slide.setAttribute('tabindex', '-1');
             });
+            
             this.descriptions.forEach(desc => {
                 desc.classList.remove('active');
                 desc.setAttribute('aria-hidden', 'true');
@@ -86,10 +89,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Ajouter la classe 'active' à l'élément actuel
             this.slides[index].classList.add('active');
-            this.indicators[index].classList.add('active');
-            this.indicators[index].setAttribute('aria-selected', 'true');
+            this.slides[index].setAttribute('aria-hidden', 'false');
+            this.slides[index].setAttribute('tabindex', '0');
+            
             this.descriptions[index].classList.add('active');
             this.descriptions[index].setAttribute('aria-hidden', 'false');
+            
+            // Mettre à jour le compteur
+            this.updateCounter(index);
             
             // Réinitialiser la barre de progression
             this.resetProgressBar();
@@ -99,6 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Annonce pour les lecteurs d'écran
             this.announceSlide();
+        },
+        
+        // Mettre à jour le compteur
+        updateCounter: function(index) {
+            this.counter.textContent = `${index + 1}/${this.totalSlides}`;
+            this.counter.setAttribute('aria-label', `Diapositive ${index + 1} sur ${this.totalSlides}`);
         },
         
         // Slide précédent
@@ -165,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const increment = 0.1; // Incrément plus petit pour une animation plus fluide
             
             const progressInterval = setInterval(() => {
-                if (width >= 100) {
+                if (width >= 100 || this.isPaused) {
                     clearInterval(progressInterval);
                 } else {
                     width += increment;
@@ -180,19 +193,42 @@ document.addEventListener('DOMContentLoaded', function() {
             this.prevButton.addEventListener('click', () => this.prevSlide());
             this.nextButton.addEventListener('click', () => this.nextSlide());
             this.pauseButton.addEventListener('click', () => this.togglePause());
-        
             
-            // Navigation clavier quand le focus est sur le conteneur
-            this.container.addEventListener('keydown', (e) => {
+            // Navigation clavier globale
+            document.addEventListener('keydown', (e) => {
+                // Ne pas intercepter les événements quand un champ de saisie a le focus
+                if (document.activeElement.tagName === 'INPUT' || 
+                    document.activeElement.tagName === 'TEXTAREA') {
+                    return;
+                }
+                
                 if (e.key === 'ArrowLeft') {
                     this.prevSlide();
-                    this.indicators[this.currentIndex].focus();
+                    this.slides[this.currentIndex].focus();
                     e.preventDefault();
                 } else if (e.key === 'ArrowRight') {
                     this.nextSlide();
-                    this.indicators[this.currentIndex].focus();
+                    this.slides[this.currentIndex].focus();
+                    e.preventDefault();
+                } else if (e.key === 'Space') {
+                    this.togglePause();
                     e.preventDefault();
                 }
+            });
+            
+            // Navigation clavier dans le slide actif
+            this.slides.forEach((slide, index) => {
+                slide.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        this.prevSlide();
+                        this.slides[this.currentIndex].focus();
+                        e.preventDefault();
+                    } else if (e.key === 'ArrowRight') {
+                        this.nextSlide();
+                        this.slides[this.currentIndex].focus();
+                        e.preventDefault();
+                    }
+                });
             });
             
             // Arrêter le défilement automatique lorsque l'utilisateur interagit
@@ -222,18 +258,56 @@ document.addEventListener('DOMContentLoaded', function() {
             // S'assurer que chaque slide a un rôle et un état appropriés
             this.slides.forEach((slide, i) => {
                 slide.setAttribute('aria-hidden', i === 0 ? 'false' : 'true');
-                slide.setAttribute('role', 'tabpanel');
+                slide.setAttribute('tabindex', i === 0 ? '0' : '-1');
+            });
+            
+            // Assurer que le first focusable element est le bouton de navigation précédente
+            this.prevButton.setAttribute('tabindex', '0');
+            
+            // Ordre logique de focus
+            const focusableElements = [
+                this.prevButton,
+                this.nextButton,
+                this.pauseButton,
+                ...this.slides
+            ];
+            
+            // Ajouter des attributs tabindex logiques
+            focusableElements.forEach((element, index) => {
+                if (element.classList.contains('carousel-slide') && 
+                    !element.classList.contains('active')) {
+                    return; // Ne pas mettre de tabindex aux slides non actifs
+                }
+                // S'assurer que le tabindex est défini pour une navigation clavier logique
+                if (!element.hasAttribute('tabindex')) {
+                    element.setAttribute('tabindex', '0');
+                }
             });
         },
         
         // Annoncer le changement de slide pour les lecteurs d'écran
         announceSlide: function() {
-            const liveRegion = document.querySelector('.carousel-slides');
+            const activeSlide = this.slides[this.currentIndex];
+            const slideTitle = activeSlide.querySelector('.slide-title').textContent;
+            const slideDate = activeSlide.querySelector('.slide-date').textContent;
             
+            // Mise à jour de l'attribut aria-live pour annoncer le changement
+            const liveRegion = document.querySelector('.carousel-slides');
             if (liveRegion) {
-                // Utilisez le contenu comme annonce implicite
-                // L'attribut aria-live assurera que les changements sont annoncés
                 liveRegion.setAttribute('aria-live', 'polite');
+                
+                // Créer un message accessible pour les lecteurs d'écran
+                const announcement = document.createElement('div');
+                announcement.className = 'sr-only';
+                announcement.textContent = `Exposition ${slideTitle}, ${slideDate}, Diapositive ${this.currentIndex + 1} sur ${this.totalSlides}`;
+                
+                // Ajouter et supprimer rapidement pour forcer l'annonce
+                liveRegion.appendChild(announcement);
+                setTimeout(() => {
+                    if (liveRegion.contains(announcement)) {
+                        liveRegion.removeChild(announcement);
+                    }
+                }, 1000);
             }
         }
     };
@@ -241,4 +315,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialiser le carrousel
     carousel.init();
 });
-
