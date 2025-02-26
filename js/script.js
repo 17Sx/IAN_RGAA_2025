@@ -180,14 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.prevButton.addEventListener('click', () => this.prevSlide());
             this.nextButton.addEventListener('click', () => this.nextSlide());
             this.pauseButton.addEventListener('click', () => this.togglePause());
-            
-            // Indicateurs
-            this.indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    this.showSlide(index);
-                    if (!this.isPaused) this.resetAutoPlay();
-                });
-            });
+        
             
             // Navigation clavier quand le focus est sur le conteneur
             this.container.addEventListener('keydown', (e) => {
